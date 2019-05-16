@@ -1,0 +1,74 @@
+.nav-main {
+  li {
+    a {
+      color: $primary-dark !important;
+      @include transition(0.4s);
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    li {
+      border-top: 2px solid $grey-blue;
+      border-bottom: 2px solid $grey-blue;
+      padding: 0.2rem 1.25rem;
+      position: relative;
+      &:hover {
+        @include transition(0.4s);
+        a {color: $secondary !important;}
+      }
+      &.active {font-weight: 700;}
+      &:first-child {
+        border-left: 2px solid $grey-blue;
+        @include border-radius(30px 0 0 30px);
+      }
+      &:nth-child(3) {padding-right: 2.5rem;} //"laisse la place" au dernier boutton
+      &:nth-child(1), &:nth-child(2) {
+        &:after {
+          content: "";
+          background-color: $grey-blue;
+          @include border-radius(50%);
+          width: 8px;
+          height: 8px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: -3px;
+          margin: auto;
+        }
+      }
+      &:last-child {
+        font-weight: 700;
+        @include border-radius(30px);
+        margin-left: -1.5rem; // pour cacher la démarquation entre les deux bordures
+        border-image: linear-gradient(90deg, $secondary 0%, $camie-yellow 100%);
+        @include linear-gradient(90deg, $secondary 0%, $camie-yellow 100%);
+        a {color: white !important;}
+        @include transition(1s);
+        &:hover {
+          @include transition(1s);
+          @include linear-gradient(90deg, $camie-yellow 0%, $camie-yellow 100%);
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 1.5rem 1.5rem 0 0;
+    align-items: flex-end;
+  }
+}
+
+
+.navbar-main {
+  padding-top: 4rem;
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      height: auto;
+      color: $primary-dark;
+      font-size: 2rem;
+    }
+  }
+}
+
+.navbar-brand {
+  img {width: 130px;}
+  @include media-breakpoint-down(lg) {padding-bottom: 0.5rem}
+}

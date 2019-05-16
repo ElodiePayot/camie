@@ -1,0 +1,21 @@
+h1, h2 {
+  font-weight: 800;
+  color: white;
+  line-height: 3.6rem;
+  &+p {
+    margin-top: 2rem;
+  }
+}
+
+h1 {color: white;}
+
+h2 {color: $primary-dark;}
+
+h3 {
+  font-weight: 800;
+  color: white;
+  line-height: 2rem;
+}
+
+
+p {line-height: 1.8rem;}
