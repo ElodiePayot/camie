@@ -59,6 +59,15 @@
 
 .navbar-main {
   padding-top: 4rem;
+  @include media-breakpoint-down(sm) {
+    padding-top: 1rem;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: white;
+  }
   .navbar-toggler {
     .navbar-toggler-icon {
       height: auto;
